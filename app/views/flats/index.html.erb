@@ -1,0 +1,26 @@
+<h1 class="text-center">All our flats (<%= @flats.count %>)</h1>
+
+<div class="container">
+  <div class="row  p-0 d-flex justify-content-between">
+    <% @flats.each do |flat| %>
+      <div class="flat-card col-md-4 flex-column">
+          <div class="flat-card-image" style="background-image: url('https://source.unsplash.com/random/2400*180')"></div>
+            <div class="flat-card-content">
+              <div><b><%= link_to flat.name, flat %></b></div>
+              <div><%= flat.description %></div>
+              <div class="flat-address"><i class="fa-solid fa-location-dot"></i>  <%= flat.address %>.</div>
+            </div>
+            <div class="youn d-flex justify-content-around">
+              <div>
+                <i class="fa-solid fa-dollar-sign"></i> <%= flat.price_per_night %>
+              </div>
+              <div>
+                <i class="fa-solid fa-user"></i> <%= flat.number_of_guests %>
+              </div>
+            </div>
+
+      </div>
+  <br>
+    <% end %>
+  </div>
+</div>
